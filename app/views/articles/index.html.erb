@@ -1,0 +1,12 @@
+<h1>My Articles <i class="fa-regular fa-newspaper"></i></h1>
+
+<ul class="list-unstyled">
+<% @articles.each do |article| %>
+  <li class="p-2 text-reset"><%= link_to article.title, article_path(article) %>
+  <%= link_to "⌫", article_path(article),
+   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+<% end %>
+</ul>
+<ul>
+  <li><%= link_to "Add new Task", "/articles/new" %></li>
+</ul>
